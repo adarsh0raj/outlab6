@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="f-form">
+
+    <h2>
+      Feedback Form
+    </h2>
+  
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+      <div class="user-box">
+        <input type="text" formControlName="name" placeholder="" required>
+        <label>Name</label>
+      </div>
+    
+      <div class="user-box">
+        <input type="text" formControlName="email" placeholder="" required>
+        <label>Email</label>
+      </div>
+  
+      <div class="user-radio">
+          <h3>Feedback</h3>
+          <input id="one" type="radio" value="Great" formControlName="feedback">
+          <label for="one">Great</label>
+          <input id="two" type="radio" value="Okay" formControlName="feedback">
+          <label for="two">Okay</label>
+          <input id="three" type="radio" value="Not good" formControlName="feedback">
+          <label for="three">Not good</label>
+      </div>
+  
+      <div class="user-box">  
+        <textarea formControlName="comment" placeholder=""></textarea>
+        <label>Comments</label>
+      </div>
+      
+      <div class="submit-btn">
+        <button type="submit" class="btn third">Submit</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="data-box">
+  
+    <h2>
+      Current Valid Feedback Data
+    </h2>
+  
+    <h4>
+      Name: 
+    </h4>
+    <p>
+       {{ this.defaultdata.name }}
+    </p>
+  
+    <h4>
+      Email:
+    </h4>
+    <p>
+       {{ this.defaultdata.email }}
+    </p>
+  
+    <h4>
+      Feedback: 
+    </h4>
+    <p>
+       {{ this.defaultdata.feedback }}
+    </p>
+  
+    <h4>
+      Comments:
+    </h4>
+    <p>
+      {{ this.defaultdata.comment }}
+    </p>
+  </div>
+</div>
